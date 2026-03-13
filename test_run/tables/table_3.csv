@@ -1,0 +1,11 @@
+0,1,2,3
+Materials,Grade of concrete,,
+,M30,M40,M50
+Cement,293,308,360
+Fly ash,73,97,140
+Coarse aggregates – 20 mm,234,358,283
+Coarse aggregates -10 mm,546,834,660
+Fine aggregate,740,750,900
+Water,172,170,160
+Powder,74,75,90
+admixture,1.10%,1.00%,1.20%

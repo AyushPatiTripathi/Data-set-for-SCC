@@ -1,0 +1,22 @@
+{
+  "cement_kg_m3": "float",
+  "fly_ash_kg_m3": "float",
+  "slag_kg_m3": "float",
+  "silica_fume_kg_m3": "float",
+  "water_kg_m3": "float",
+  "fine_aggregate_kg_m3": "float",
+  "coarse_aggregate_kg_m3": "float",
+  "superplasticizer_percent": "float",
+  "viscosity_modifier_percent": "float",
+  "fiber_volume_percent": "float",
+
+  "slump_flow_mm": "float",
+  "t50_time_sec": "float",
+  "v_funnel_sec": "float",
+  "l_box_ratio": "float",
+
+  "compressive_strength_mpa": "float",
+  "split_tensile_strength_mpa": "float",
+  "flexural_strength_mpa": "float",
+  "age_days": "int"
+}

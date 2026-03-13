@@ -1,0 +1,13 @@
+{
+ "cement_kg_m3": ["cement", "opc", "binder"],
+ "fly_ash_kg_m3": ["fly ash", "fa"],
+ "slag_kg_m3": ["slag", "gbs"],
+ "water_kg_m3": ["water", "w"],
+ "fine_aggregate_kg_m3": ["fine aggregate", "sand"],
+ "coarse_aggregate_kg_m3": ["coarse aggregate", "gravel"],
+ "superplasticizer_percent": ["sp", "superplasticizer"],
+ "slump_flow_mm": ["slump flow"],
+ "v_funnel_sec": ["v funnel"],
+ "l_box_ratio": ["l-box", "lbox"],
+ "compressive_strength_mpa": ["compressive strength"]
+}

@@ -1,26 +1,33 @@
 import requests
+import json
 
-def search_papers(query, rows=20):
+BASE_URL = "https://api.semanticscholar.org/graph/v1/paper/search"
 
-    url = "https://api.crossref.org/works"
+def search_papers(query, limit=100):
 
     params = {
         "query": query,
-        "rows": rows
+        "limit": limit,
+        "fields": "title,year,authors,openAccessPdf,externalIds"
     }
 
-    response = requests.get(url, params=params)
+    response = requests.get(BASE_URL, params=params)
+
     data = response.json()
 
     papers = []
 
-    for item in data["message"]["items"]:
+    for p in data["data"]:
 
         paper = {
-            "title": item.get("title", [""])[0],
-            "doi": item.get("DOI"),
-            "year": item.get("created", {}).get("date-parts", [[None]])[0][0]
+            "title": p.get("title"),
+            "year": p.get("year"),
+            "doi": p.get("externalIds", {}).get("DOI"),
+            "pdf_url": None
         }
+
+        if p.get("openAccessPdf"):
+            paper["pdf_url"] = p["openAccessPdf"]["url"]
 
         papers.append(paper)
 
@@ -29,7 +36,7 @@ def search_papers(query, rows=20):
 
 if __name__ == "__main__":
 
-    papers = search_papers("self compacting concrete mix design", 10)
+    papers = search_papers("self compacting concrete mix design", 50)
 
     for p in papers:
         print(p)

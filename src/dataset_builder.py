@@ -1,15 +1,18 @@
 import pandas as pd
+import os
 
-dataset = []
+def build_dataset(folder):
 
-dataset.append({
-    "cement_kg_m3":420,
-    "fly_ash_kg_m3":80,
-    "water_kg_m3":180,
-    "slump_flow_mm":710,
-    "compressive_strength_mpa":52
-})
+    rows = []
 
-df = pd.DataFrame(dataset)
+    for file in os.listdir(folder):
 
-df.to_csv("scc_dataset.csv", index=False)
+        if file.endswith(".csv"):
+
+            df = pd.read_csv(os.path.join(folder,file))
+
+            rows.append(df)
+
+    dataset = pd.concat(rows)
+
+    dataset.to_csv("final_dataset/scc_dataset.csv", index=False)
